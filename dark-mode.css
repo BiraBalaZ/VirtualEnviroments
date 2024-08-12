@@ -120,6 +120,7 @@ footer a {
     border-color: var(--text-color);
 
     /* margin-bottom: 75px; */
+    margin-right: 75px;
 }
 
 .back-to-top:hover {
