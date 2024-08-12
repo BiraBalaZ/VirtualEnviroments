@@ -2,13 +2,11 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    min-width: 600px;
-}
-
 main {
     margin: auto;
+    min-width: 350px;
     max-width: 1000px;
+    padding: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
