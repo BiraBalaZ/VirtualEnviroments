@@ -5,6 +5,7 @@ html {
 main {
     margin: auto;
     max-width: 1000px;
+    min-width: 600px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
