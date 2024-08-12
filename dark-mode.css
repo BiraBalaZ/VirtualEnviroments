@@ -1,0 +1,132 @@
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --header-background: #f0f0f0;
+    --toggle-button-background: #007bff;
+    --toggle-button-text-color: #ffffff;
+    --header-text-color: #000000;
+
+    --command-text-color: #f57600;
+
+    --button-text-color: #ffffff;
+    --button-background: black;
+    --button-background-hover: #868686;
+}
+
+[data-theme="dark"] {
+    --background-color: #141420;
+    --text-color: #ffffff;
+    --header-background: #181825;
+    --toggle-button-background: #bb86fc;
+    --toggle-button-text-color: #141420;
+    --header-text-color: #ceb675;
+
+    --command-text-color: #947f45;
+
+    --button-text-color: #ceb675;
+    --button-background: #30304d;
+    --button-background-hover: #141420;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+button#toggle-mode {
+    background-color: var(--toggle-button-background);
+    color: var(--toggle-button-text-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button#toggle-mode:hover {
+    opacity: 0.9;
+}
+
+
+header {
+    background-color: var(--header-background);
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--header-text-color);
+}
+
+.command {
+    color: var(--command-text-color);
+    background-color: transparent;
+}
+
+.marked {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.288);
+}
+
+.atention{
+    background-color: rgba(255, 0, 0, 0.466);
+    padding: 5px;
+
+    & .atencao {
+        font-size: x-large;
+    }
+
+    & a {
+        transition: .7s;
+        color: var(--text-color)
+    }
+
+    & a:hover {
+        font-size: larger;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+}
+
+footer a {
+    color: var(--header-text-color);
+}
+
+/* button back to top */
+.back-to-top {
+    position: fixed; /* Posicionamento fixo na tela */
+    bottom: 20px; /* Distância da parte inferior da tela */
+    right: 20px; /* Distância da parte direita da tela */
+    width: 50px; /* Largura do botão */
+    height: 50px; /* Altura do botão */
+    border-radius: 50%; /* Borda arredondada */
+    background-color: var(--button-background); /* Cor do botão */
+    color: var(--button-text-color); /* Cor do texto */
+    text-align: center; /* Alinhamento do texto */
+    font-size: 20px; /* Tamanho da fonte */
+    cursor: pointer; /* Indicador de cursor ao passar o mouse */
+    z-index: 100; /* Posicionamento na frente de outros elementos */
+    transition: all 0.3s ease; /* Efeito de transição suave */
+    
+    border-color: var(--text-color);
+
+    /* margin-bottom: 75px; */
+}
+
+.back-to-top:hover {
+    font-weight: bolder;
+    background-color: var(--button-background-hover);
+}
+
+.back-to-top:active {
+    transform: scale(0.9); /* Reduzir o tamanho do botão ao pressionar */
+}

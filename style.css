@@ -1,0 +1,72 @@
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    margin: auto;
+    max-width: 1000px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2, h3 {
+    margin-top: 50px;
+    padding-left: 15px;
+}
+
+main p {
+    text-indent: 12pt;
+    text-align: justify;
+    line-height: 30px;
+}
+
+pre {
+    padding: 15px;
+}
+
+.cmd {
+    background-color: black;
+    color: white;
+
+    margin-left: 5px;
+    border-radius: 10px;
+    padding: 15px 100px 15px 25px;
+}
+
+.orange {
+    color: orangered;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.gold {
+    color: goldenrod;
+}
+
+.comment {
+    background-color: transparent;
+    color: green;
+}
+
+.atention {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+footer a {
+    transition: .7s;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: large;
+}

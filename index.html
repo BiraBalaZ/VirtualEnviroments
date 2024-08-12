@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <title>Virtual Enviroments</title>
+</head>
+<body>
+    <header>
+        <button id="toggle-mode">Dark Mode</button>
+        <h1>Virtual Enviroments (Venv)</h1>
+    </header>
+    <main>
+        <button class="back-to-top" id="backToTopBtn">^</button>
+        <h2>O que é um Ambiente Virtual (Virtual Environment)?</h2>
+        <p>Um ambiente virtual é uma instância independente do Python, que permite isolar as bibliotecas e dependências de um projeto específico. Isso é útil para evitar conflitos entre diferentes versões de pacotes e garantir que o projeto seja executado consistentemente, independentemente do ambiente de desenvolvimento.</p>
+
+        <hr>
+
+        <h2>Como Criar um Ambiente Virtual com o <mark class="command marked">venv</mark></h2>
+        <p>O <mark class="command">venv</mark> é uma biblioteca Python padrão, disponível nas versões 3.3 e posteriores. Para criar um ambiente virtual, siga os passos abaixo:</p>
+
+        <h3>1. Abra um Terminal</h3>
+        <p>Abra o terminal ou prompt de comando do seu sistema operacional.</p>
+
+        <h3>2. Navegue até o Diretório do Projeto</h3>
+        <p>Use o comando <mark class="command">cd</mark> para navegar até o diretório raiz do seu projeto.</p>
+        <pre class="cmd"><code>"<mark class="command">cd</mark> /caminho/do/seu/projeto"</code></pre>
+
+        <h3>3. Crie o Ambiente Virtual</h3>
+        <p>Use o comando python <mark class="command">-m</mark> venv nome_do_ambiente para criar um ambiente virtual com o nome desejado. Substitua nome_do_ambiente pelo nome que você escolher para o ambiente virtual.</p>
+        <pre class="cmd"><code>python <mark class="command">-m</mark> venv meu_ambiente_virtual"</code></pre>
+
+        <h3>4. Ative o Ambiente Virtual</h3>
+        <p>Dependendo do seu sistema operacional, o comando para ativar o ambiente virtual varia:</p>
+        <p><strong>No Windows:</strong></p>
+        <pre class="cmd"><code>meu_ambiente_virtual\Scripts\activate</code></pre>
+
+        <p><strong>No macOS e Linux:</strong></p>
+        <pre class="cmd"><code>source meu_ambiente_virtual/bin/activate</code></pre>
+        <p>Você verá o nome do ambiente virtual atual no prompt do terminal, indicando que o ambiente foi ativado com sucesso.</p>
+
+        <h2>Como Desativar um Ambiente Virtual</h2>
+        <p>Para desativar um ambiente virtual e retornar ao ambiente global do Python, basta digitar:</p>
+        <pre class="cmd"><code>deactivate</code></pre>
+
+        <hr>
+        <h2>Como Usar um Ambiente Virtual em um Projeto Python</h2>
+        <p>Agora que o ambiente virtual está ativado e as bibliotecas necessárias estão instaladas, você pode executar seu projeto Python normalmente. Todas as dependências serão carregadas a partir do ambiente virtual.</p>
+
+        <h3>Exemplo Prático</h3>
+        <p>Vamos criar um exemplo simples de um projeto Python que usa um ambiente virtual.</p>
+        <p>1. Crie um ambiente virtual chamado "meu_projeto".</p>
+        <pre class="cmd"><code>python <mark class="command">-m</mark> venv meu_projeto</code></pre>
+
+        <p>2. Ative o ambiente virtual.</p>
+        <pre class="cmd"><code>source meu_projeto/bin/activate  <mark class="comment"># No macOS e Linux</mark></code></pre>
+
+        <p>3. Instale uma biblioteca, como o Flask, em seu ambiente virtual.</p>
+        <pre class="cmd"><code>pip install flask</code></pre>
+        
+        <p>4. Crie um arquivo Python, como app.py, e escreva o seguinte código:</p>
+        <pre class="cmd">
+<span class="orange">from</span> flask <span class="orange">import</span> Flask     
+
+app <span class="orange">=</span> Flask(__name__)       
+
+<span class="orange">@</span>app.route(<span class="yellow">'/'</span>)             
+<span class="gold">def</span> <span class="green">hello_world</span>():          
+<span class="gold">return</span> 'Hello, World!'  
+
+<span class="gold">if</span> __name__ <span class="orange">==</span> <span class="yellow">'__main__'</span>:  
+app.run()
+        </pre>    
+
+        <p>5. Execute o aplicativo Python.</p>
+        <pre class="cmd"><code>python app.py</code></pre>
+
+        <p>Agora, seu projeto Flask está em execução usando o ambiente virtual que você configurou.</p>
+
+        <h2>Bibliotecas Instaladas no seu Ambiente</h2>
+        <p>Conforme visto anteriormente, usando o comando <mark class="command">pip install</mark> você instala bibliotecas no seu ambiente virtual. Mas como vemos quais nós temos instaladas no ambiente? Simples:</p>
+
+        <h3>Listando todas as Bibliotecas Instaladas</h3>
+        <pre class="cmd"><code>pip freeze</code></pre>
+
+        <h3>Para mandar as bibliotecas necessárias para um arquivo</h3>
+        <p>Você pode mandar essa lista de bibliotecas necessárias para o projeto em um documento <mark class="command">.txt</mark> da seguinte forma:</p>
+        <pre class="cmd"><code>pip freeze >  requirements.txt</code></pre>
+
+        <h3>Para instalar as bibliotecas necessárias</h3>
+        <p>A pessoa, ou até mesmo você se receber um documento <mark class="command">requirements.txt</mark> e precisar instalar, vai usar o seguinte comando para instalar as bibliotecas no ambiente do projeto:</p>
+        <pre class="cmd"><code>pip install -r requirements.txt</code></pre>
+
+        <h3>Atualizando o pip</h3>
+        <p>Algumas vezes a biblioteca pode dar problema, como já aconteceu no meu caso, e para resolver o problema de atualização, basta utilizar o seguinte comando para atualizar as bibliotecas:</p>
+        <pre class="cmd"><code>pip install pip --upgrade</code></pre>
+
+        <h2>Conclusão</h2>
+        <p>O uso de ambientes virtuais com o venv é fundamental para manter a organização e evitar conflitos de dependências em projetos Python. Este guia detalhado fornece os passos necessários para criar, ativar e usar um ambiente virtual com exemplos práticos. Ao seguir essas práticas, você pode desenvolver projetos Python de forma mais eficiente e segura.</p>
+    </main>
+    <div class="atention">
+        <p><strong class="atencao">Atenção!</strong> TODOS os textos utilizados para a criação do conteúdo desta página foram retiradas do site <a href="https://dev.to/franciscojdsjr/guia-completo-para-usar-o-virtual-environment-venv-no-python-57bo"><strong>dev.to</strong></a>. Com o intuito de praticar montagem de páginas web e consulta rápida sobre Ambientes Virtuais em Python.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 <a href="https://github.com/BiraBalaZ">Erick Monteiro</a></p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="dark-mode.js"></script>
+</body>
+</html>
